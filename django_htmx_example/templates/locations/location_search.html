@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block title %}
+  Search Locations
+{% endblock title %}
+{% block javascript %}
+  {{ block.super }}
+  <script src="https://unpkg.com/htmx.org@1.9.6"
+          integrity="sha384-FhXw7b6AlE/jyjlZH5iHa/tTe9EpJ1Y55RjcgPbjeWMskSxZt1v9qkxLJWNJaGni"
+          crossorigin="anonymous"></script>
+{% endblock javascript %}
+{% block content %}
+  <h1>Search for a duty location</h1>
+  <form>
+    <input type="search"
+           name="search"
+           value="{{ request.GET.search }}"
+           placeholder="begin typing..."
+           hx-get="/locations/search/"
+           hx-trigger="keyup changed delay:500ms, search"
+           hx-target="#search-results"
+           hx-indicator=".htmx-indicator"
+           hx-push-url="true" />
+  </form>
+  <hr />
+  {% include "locations/partials/results.html" %}
+{% endblock content %}

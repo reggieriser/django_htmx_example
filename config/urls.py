@@ -14,6 +14,7 @@ urlpatterns = [
     path("users/", include("django_htmx_example.users.urls", namespace="users")),
     path("accounts/", include("allauth.urls")),
     # Your stuff: custom urls includes go here
+    path("locations/", include("django_htmx_example.locations.urls", namespace="locations")),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 

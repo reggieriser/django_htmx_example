@@ -1,0 +1,15 @@
+<div id="search-results">
+  {% if has_more %}(showing first 50 results){% endif %}
+  {% if duty_locations %}
+    <ul>
+      {% for dl in duty_locations %}
+        <li>
+          {{ dl.name }}
+          {% if dl.affiliation %}({{ dl.affiliation }}{% endif %}
+        </li>
+      {% endfor %}
+    </ul>
+  {% else %}
+    No results found.
+  {% endif %}
+</div>
