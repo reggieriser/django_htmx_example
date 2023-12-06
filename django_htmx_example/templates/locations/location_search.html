@@ -17,7 +17,7 @@
            value="{{ request.GET.search }}"
            placeholder="begin typing..."
            hx-get="/locations/search/"
-           hx-trigger="keyup changed delay:500ms, search"
+           hx-trigger="input changed delay:500ms, search"
            hx-target="#search-results"
            hx-indicator=".htmx-indicator"
            hx-push-url="true" />
