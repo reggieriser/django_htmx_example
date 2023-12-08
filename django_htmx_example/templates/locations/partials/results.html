@@ -1,5 +1,5 @@
 <div id="search-results">
-  {% if has_more %}(showing first 50 results){% endif %}
+  {% if has_more %}(showing first {{ max_results }} results){% endif %}
   {% if duty_locations %}
     <ul>
       {% for dl in duty_locations %}
