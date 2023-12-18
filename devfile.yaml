@@ -33,7 +33,7 @@ commands:
       label: "Install dependencies"
       component: tools
       workingDir: ${PROJECT_SOURCE}
-      commandLine: "python3 -m venv .venv && . .venv/bin/activate && pip3 install -r local.txt"
+      commandLine: "python3 -m venv .venv && . .venv/bin/activate && pip3 install -r requirements/local.txt"
       group:
         kind: build
 
